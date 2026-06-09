@@ -74,7 +74,7 @@ export default function InsightsPage() {
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen pt-24 pb-20 px-4 relative bg-[#0D1117]">
+      <div className="min-h-screen pt-24 pb-20 px-4 relative" style={{ background: "#0D1117" }}>
         {/* Glow Effects */}
         <div className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full blur-[150px] pointer-events-none opacity-10" style={{ background: "#74C0FC" }} />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none opacity-10" style={{ background: "#52B788" }} />
@@ -164,7 +164,7 @@ export default function InsightsPage() {
                       )}
                     </div>
                     <h3 className="font-display font-bold text-white text-lg mb-2">{insight.title}</h3>
-                    <p className="text-sm leading-relaxed text-[#F0F6FC]/60">{insight.body}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "rgba(240,246,252,0.6)" }}>{insight.body}</p>
                   </motion.div>
                 ))}
               </div>

@@ -19,7 +19,8 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
   if (loading || !user) {
     return (
       <div
-        className="min-h-screen flex flex-col items-center justify-center gap-6 bg-[#0D1117]"
+        className="min-h-screen flex flex-col items-center justify-center gap-6"
+        style={{ background: "#0D1117" }}
       >
         <div
           className="w-14 h-14 rounded-2xl flex items-center justify-center"

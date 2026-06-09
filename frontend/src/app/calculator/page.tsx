@@ -243,7 +243,7 @@ export default function CalculatorPage() {
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen pt-24 px-4 pb-12 relative bg-[#0D1117]">
+      <div className="min-h-screen pt-24 px-4 pb-12 relative" style={{ background: "#0D1117" }}>
         {/* Decorative Background Orbs */}
         <div className="absolute top-20 left-10 w-96 h-96 rounded-full blur-[120px] pointer-events-none opacity-20" style={{ background: "#2D6A4F" }} />
         <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-[120px] pointer-events-none opacity-10" style={{ background: "#74C0FC" }} />
@@ -252,7 +252,7 @@ export default function CalculatorPage() {
           {/* Header */}
           <div className="mb-10">
             <h1 className="font-display text-4xl sm:text-5xl font-black text-white mb-3 tracking-tight">Your Carbon Profile</h1>
-            <p className="text-base text-[#F0F6FC]/60">Adjust the dials below to calculate your annual environmental impact.</p>
+            <p className="text-base" style={{ color: "rgba(240,246,252,0.6)" }}>Adjust the dials below to calculate your annual environmental impact.</p>
           </div>
 
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
@@ -367,7 +367,7 @@ export default function CalculatorPage() {
                           <div className="p-6 rounded-2xl text-center mt-4" style={{ background: "linear-gradient(135deg, rgba(82,183,136,0.1), rgba(64,145,108,0.1))", border: "1px dashed rgba(82,183,136,0.3)" }}>
                             <Leaf className="w-8 h-8 mx-auto mb-3 text-[#52B788]" />
                             <h3 className="text-white font-medium mb-1">Ready to see your dashboard?</h3>
-                            <p className="text-sm mb-4 text-[#F0F6FC]/60">Your complete profile will be saved and benchmarked against global goals.</p>
+                            <p className="text-sm mb-4" style={{ color: "rgba(240,246,252,0.6)" }}>Your complete profile will be saved and benchmarked against global goals.</p>
                           </div>
                         </div>
                       )}

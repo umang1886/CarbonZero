@@ -58,7 +58,7 @@ export default function LogPage() {
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen pt-24 pb-20 px-4 relative bg-[#0D1117]">
+      <div className="min-h-screen pt-24 pb-20 px-4 relative" style={{ background: "#0D1117" }}>
         {/* Background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-96 rounded-full blur-[120px] pointer-events-none opacity-20" style={{ background: "linear-gradient(to bottom, #2D6A4F, transparent)" }} />
 
@@ -85,14 +85,14 @@ export default function LogPage() {
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                 <span className="font-display text-3xl font-black text-white leading-none">{todayTotal.toFixed(1)}</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider mt-1 text-[#52B788]">kg CO₂e</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider mt-1" style={{ color: "#52B788" }}>kg CO₂e</span>
               </div>
             </div>
 
             <div className="flex-1 text-center sm:text-left">
-              <h2 className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: "rgba(240,246,252,0.5)" }}>Today&apos;s Impact</h2>
+              <h2 className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: "rgba(240,246,252,0.5)" }}>Today's Impact</h2>
               <p className="text-base text-white/80 leading-relaxed mb-4">
-                You&apos;ve used <strong className="text-white">{progressPct.toFixed(0)}%</strong> of your suggested daily carbon budget ({dailyBudget} kg).
+                You've used <strong className="text-white">{progressPct.toFixed(0)}%</strong> of your suggested daily carbon budget ({dailyBudget} kg).
               </p>
               <div className="flex flex-wrap justify-center sm:justify-start gap-4">
                 <div className="bg-black/20 rounded-xl px-4 py-2 border border-white/5">
@@ -205,7 +205,7 @@ export default function LogPage() {
           {/* Activity Feed Timeline */}
           <div>
             <h2 className="font-display font-bold text-white mb-6 text-lg flex items-center gap-2">
-              <Clock className="w-5 h-5 text-white/50" /> Today&apos;s Timeline
+              <Clock className="w-5 h-5 text-white/50" /> Today's Timeline
             </h2>
             {logs.length > 0 ? (
               <div className="space-y-4 pl-2 relative">

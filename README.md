@@ -3,6 +3,11 @@
 <!-- Animated Banner -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=CarbonZero&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=35&desc=AI-Powered%20Carbon%20Intelligence%20Platform&descSize=20&descAlignY=60" width="100%" />
 
+<!-- Animated Logo -->
+<br/>
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=700&size=26&pause=1000&color=52B788&center=true&vCenter=true&width=600&lines=Know+Your+Carbon+Story.;Track+It.+Reduce+It.;Powered+by+Google+Gemini+AI.;Built+for+a+Greener+Future.+🌱" alt="Typing SVG" />
+
+<br/>
 
 <!-- Live App Badge -->
 <a href="https://carbonzero-frontend-252463810730.asia-south1.run.app/" target="_blank">
@@ -126,77 +131,6 @@ graph TB
     K --> P
     L --> M
     B --> N
-```
-
----
-
-## 🗄️ Database Flow
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant NextJS as Frontend
-    participant FastAPI as Backend
-    participant Firestore as Database
-    participant Gemini as AI Service
-    
-    User->>NextJS: Submit Calculator Form
-    NextJS->>FastAPI: POST /api/v1/footprint/calculate
-    FastAPI->>FastAPI: Clamp bounds & calculate IPCC factors
-    FastAPI->>Firestore: db.collection("users").doc(uid).set(latest_footprint)
-    Firestore-->>FastAPI: Acknowledged
-    FastAPI-->>NextJS: Return Footprint Data & Badges
-    
-    User->>NextJS: Chat with GreenBot
-    NextJS->>FastAPI: POST /api/v1/chat/message (includes footprint)
-    FastAPI->>Gemini: Build Prompt Context + Message
-    Gemini-->>FastAPI: Generate AI Response
-    FastAPI-->>NextJS: Return JSON Reply
-```
-
----
-
-## 📡 API Documentation
-
-CarbonZero exposes a cleanly documented REST API. All endpoints are prefixed with `/api/v1`.
-
-### `POST /footprint/calculate`
-Calculates the user's carbon footprint based on IPCC emission factors.
-
-**Request Body:**
-```json
-{
-  "transport": { "carPetrolKmWeek": 150, "flightsPerYear": 2 },
-  "dietType": "vegan",
-  "energy": { "electricityKwhMonth": 250 },
-  "shopping": { "clothingItemsYear": 10 }
-}
-```
-
-**Response (200 OK):**
-```json
-{
-  "total_kg_co2e": 4500,
-  "breakdown": {
-    "transport": 2000,
-    "diet": 1500,
-    "energy": 900,
-    "shopping": 100
-  },
-  "comparison": { "global_avg": 4800, "paris_target": 2000 }
-}
-```
-
-### `POST /chat/message`
-Interfaces with Google Gemini 1.5 Flash for contextual sustainability advice.
-
-**Request Body:**
-```json
-{
-  "message": "How can I reduce my transport footprint?",
-  "footprint": { "total_kg_co2e": 4500, "breakdown": { "transport": 2000 } },
-  "history": []
-}
 ```
 
 ---
