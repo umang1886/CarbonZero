@@ -87,7 +87,7 @@ export default function LoginPage() {
         </form>
 
         <p className="text-center text-sm mt-6" style={{ color: "rgba(240,246,252,0.6)" }}>
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/register" className="font-semibold text-white hover:underline decoration-[#52B788] underline-offset-4">
             Sign up
           </Link>

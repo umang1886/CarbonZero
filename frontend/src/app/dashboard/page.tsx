@@ -118,7 +118,7 @@ export default function DashboardPage() {
           <div>
             <h1 className="font-display text-4xl font-black text-white mb-3">Welcome to CarbonZero</h1>
             <p className="text-base max-w-md mx-auto" style={{ color: "rgba(240,246,252,0.6)" }}>
-              You haven't calculated your carbon footprint yet. Find out your environmental impact in just a few minutes.
+              You haven&apos;t calculated your carbon footprint yet. Find out your environmental impact in just a few minutes.
             </p>
           </div>
           <Link href="/calculator">

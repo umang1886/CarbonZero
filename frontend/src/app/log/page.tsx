@@ -90,9 +90,9 @@ export default function LogPage() {
             </div>
 
             <div className="flex-1 text-center sm:text-left">
-              <h2 className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: "rgba(240,246,252,0.5)" }}>Today's Impact</h2>
+              <h2 className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: "rgba(240,246,252,0.5)" }}>Today&apos;s Impact</h2>
               <p className="text-base text-white/80 leading-relaxed mb-4">
-                You've used <strong className="text-white">{progressPct.toFixed(0)}%</strong> of your suggested daily carbon budget ({dailyBudget} kg).
+                You&apos;ve used <strong className="text-white">{progressPct.toFixed(0)}%</strong> of your suggested daily carbon budget ({dailyBudget} kg).
               </p>
               <div className="flex flex-wrap justify-center sm:justify-start gap-4">
                 <div className="bg-black/20 rounded-xl px-4 py-2 border border-white/5">
@@ -205,7 +205,7 @@ export default function LogPage() {
           {/* Activity Feed Timeline */}
           <div>
             <h2 className="font-display font-bold text-white mb-6 text-lg flex items-center gap-2">
-              <Clock className="w-5 h-5 text-white/50" /> Today's Timeline
+              <Clock className="w-5 h-5 text-white/50" /> Today&apos;s Timeline
             </h2>
             {logs.length > 0 ? (
               <div className="space-y-4 pl-2 relative">

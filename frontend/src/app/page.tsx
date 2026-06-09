@@ -578,7 +578,7 @@ export default function LandingPage() {
           <h2 className="font-display text-4xl md:text-5xl font-black text-white mb-4">
             Built for <span className="green-gradient-text">Every Eco-Mindset</span>
           </h2>
-          <p className="text-lg" style={{ color: "rgba(240,246,252,0.5)" }}>Whether you're just starting out or a dedicated sustainability champion.</p>
+          <p className="text-lg" style={{ color: "rgba(240,246,252,0.5)" }}>Whether you&apos;re just starting out or a dedicated sustainability champion.</p>
         </FadeInSection>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {personas.map((p, i) => (
