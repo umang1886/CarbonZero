@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useFootprintStore } from "@/store/footprintStore";
 import { useAuthStore } from "@/store/authStore";
+import { API_URL } from "@/config";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -221,7 +222,6 @@ export default function CalculatorPage() {
         headers["Authorization"] = `Bearer ${token}`;
       }
 
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
       const res = await fetch(`${API_URL}/api/v1/footprint/calculate`, {
         method: "POST",
         headers,

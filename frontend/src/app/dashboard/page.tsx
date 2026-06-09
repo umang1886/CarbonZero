@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { API_URL } from "@/config";
 import { useFootprintStore } from "@/store/footprintStore";
 import { useAuthStore } from "@/store/authStore";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -76,7 +77,6 @@ export default function DashboardPage() {
 
     user.getIdToken()
       .then((token) => {
-        const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
         return fetch(`${API_URL}/api/v1/footprint/latest`, {
           headers: { Authorization: `Bearer ${token}` },
         });

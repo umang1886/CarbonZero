@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Leaf, Bot, User, Loader2, Minimize2 } from "lucide-react";
 import { useFootprintStore } from "@/store/footprintStore";
+import { API_URL } from "@/config";
 import { useAuthStore } from "@/store/authStore";
 
 interface Message {
@@ -58,7 +59,6 @@ export default function ChatBot() {
         content: m.content,
       }));
 
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
       const res = await fetch(`${API_URL}/api/v1/chat/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
