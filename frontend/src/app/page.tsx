@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion, useInView, useMotionTemplate, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
 import {
   Leaf, BarChart3, Zap, Users, Shield, Globe, ArrowRight,
   Car, Home, Utensils, ShoppingBag, TrendingDown, Award,
@@ -427,44 +426,36 @@ export default function LandingPage() {
               </p>
               
               <div className="space-y-4">
-                <div className="card-glass p-5 rounded-2xl flex items-center justify-between transition-all hover:bg-white/5 cursor-pointer" onClick={() => setDemoState(s => ({ ...s, ev: !s.ev }))}>
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${demoState.ev ? 'bg-[#52B788] text-white shadow-[0_0_15px_rgba(82,183,136,0.5)]' : 'bg-white/5 text-white/50'}`}>
-                      <Car className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white text-lg">Switch to an EV</h4>
-                      <p className="text-sm" style={{ color: "rgba(240,246,252,0.5)" }}>Save ~1,800 kg CO₂e / yr</p>
-                    </div>
-                  </div>
-                  <Switch checked={demoState.ev} onCheckedChange={(checked: boolean) => setDemoState(s => ({ ...s, ev: checked }))} />
-                </div>
-
-                <div className="card-glass p-5 rounded-2xl flex items-center justify-between transition-all hover:bg-white/5 cursor-pointer" onClick={() => setDemoState(s => ({ ...s, vegan: !s.vegan }))}>
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${demoState.vegan ? 'bg-[#74C0FC] text-white shadow-[0_0_15px_rgba(116,192,252,0.5)]' : 'bg-white/5 text-white/50'}`}>
-                      <Utensils className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white text-lg">Adopt a Vegan Diet</h4>
-                      <p className="text-sm" style={{ color: "rgba(240,246,252,0.5)" }}>Save ~950 kg CO₂e / yr</p>
-                    </div>
-                  </div>
-                  <Switch checked={demoState.vegan} onCheckedChange={(checked: boolean) => setDemoState(s => ({ ...s, vegan: checked }))} />
-                </div>
-
-                <div className="card-glass p-5 rounded-2xl flex items-center justify-between transition-all hover:bg-white/5 cursor-pointer" onClick={() => setDemoState(s => ({ ...s, solar: !s.solar }))}>
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${demoState.solar ? 'bg-[#F4A261] text-white shadow-[0_0_15px_rgba(244,162,97,0.5)]' : 'bg-white/5 text-white/50'}`}>
-                      <Home className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white text-lg">Install Solar Panels</h4>
-                      <p className="text-sm" style={{ color: "rgba(240,246,252,0.5)" }}>Save ~1,400 kg CO₂e / yr</p>
-                    </div>
-                  </div>
-                  <Switch checked={demoState.solar} onCheckedChange={(checked: boolean) => setDemoState(s => ({ ...s, solar: checked }))} />
-                </div>
+                {[
+                  { key: "ev" as const, icon: Car, label: "Switch to an EV", save: "~1,800 kg CO₂e / yr", color: "#52B788", shadow: "rgba(82,183,136,0.5)" },
+                  { key: "vegan" as const, icon: Utensils, label: "Adopt a Vegan Diet", save: "~950 kg CO₂e / yr", color: "#74C0FC", shadow: "rgba(116,192,252,0.5)" },
+                  { key: "solar" as const, icon: Home, label: "Install Solar Panels", save: "~1,400 kg CO₂e / yr", color: "#F4A261", shadow: "rgba(244,162,97,0.5)" },
+                ].map(({ key, icon: Icon, label, save, color, shadow }) => {
+                  const active = demoState[key];
+                  return (
+                    <button
+                      key={key}
+                      type="button"
+                      onClick={() => setDemoState(s => ({ ...s, [key]: !s[key] }))}
+                      className="w-full card-glass p-5 rounded-2xl flex items-center justify-between transition-all hover:bg-white/5 cursor-pointer text-left"
+                      style={{ border: `1px solid ${active ? color + "50" : "rgba(255,255,255,0.05)"}`, boxShadow: active ? `0 0 20px ${shadow}30` : "none" }}
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300" style={{ background: active ? color + "25" : "rgba(255,255,255,0.05)", boxShadow: active ? `0 0 15px ${shadow}` : "none" }}>
+                          <Icon className="w-6 h-6 transition-colors duration-300" style={{ color: active ? color : "rgba(255,255,255,0.4)" }} />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-white text-lg">{label}</h4>
+                          <p className="text-sm" style={{ color: "rgba(240,246,252,0.5)" }}>Save {save}</p>
+                        </div>
+                      </div>
+                      {/* Custom toggle pill */}
+                      <div className="relative w-12 h-6 rounded-full transition-all duration-300 shrink-0" style={{ background: active ? color : "rgba(255,255,255,0.1)", boxShadow: active ? `0 0 10px ${shadow}` : "none" }}>
+                        <div className="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-300" style={{ transform: active ? "translateX(24px)" : "translateX(0)" }} />
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </FadeInSection>
 
