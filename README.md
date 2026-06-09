@@ -5,7 +5,7 @@
 
 <!-- Animated Logo -->
 <br/>
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&pause=1000&color=52B788&center=true&vCenter=true&width=600&lines=Know+Your+Carbon+Story.;Track+It.+Reduce+It.;Powered+by+Google+Gemini+AI.;Built+for+a+Greener+Future.+🌱" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=700&size=26&pause=1000&color=52B788&center=true&vCenter=true&width=600&lines=Know+Your+Carbon+Story.;Track+It.+Reduce+It.;Powered+by+Google+Gemini+AI.;Built+for+a+Greener+Future.+🌱" alt="Typing SVG" />
 
 <br/>
 
@@ -101,7 +101,7 @@
 
 ```mermaid
 graph TB
-    subgraph "Frontend — Next.js 16"
+    subgraph Frontend["Frontend — Next.js 16"]
         A[Landing Page] --> B[Auth Pages]
         B --> C[Dashboard]
         C --> D[Calculator]
@@ -111,13 +111,13 @@ graph TB
         H[GreenBot Chatbot]
     end
 
-    subgraph "Backend — FastAPI + Python"
-        I[/api/v1/footprint/calculate]
-        J[/api/v1/footprint/latest]
-        K[/api/v1/chat/message]
+    subgraph Backend["Backend — FastAPI + Python"]
+        I["/api/v1/footprint/calculate"]
+        J["/api/v1/footprint/latest"]
+        K["/api/v1/chat/message"]
     end
 
-    subgraph "Google Cloud"
+    subgraph Cloud["Google Cloud"]
         L[Cloud Run — Frontend]
         M[Cloud Run — Backend]
         N[Firebase Auth]
