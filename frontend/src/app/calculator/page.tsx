@@ -221,7 +221,8 @@ export default function CalculatorPage() {
         headers["Authorization"] = `Bearer ${token}`;
       }
 
-      const res = await fetch("http://localhost:5000/api/v1/footprint/calculate", {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const res = await fetch(`${API_URL}/api/v1/footprint/calculate`, {
         method: "POST",
         headers,
         body: JSON.stringify(data),

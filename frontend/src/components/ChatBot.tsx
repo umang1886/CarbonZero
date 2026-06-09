@@ -58,7 +58,8 @@ export default function ChatBot() {
         content: m.content,
       }));
 
-      const res = await fetch("http://localhost:5000/api/v1/chat/message", {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const res = await fetch(`${API_URL}/api/v1/chat/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

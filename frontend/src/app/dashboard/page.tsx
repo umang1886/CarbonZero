@@ -75,11 +75,12 @@ export default function DashboardPage() {
     setFetching(true);
 
     user.getIdToken()
-      .then((token) =>
-        fetch("http://localhost:5000/api/v1/footprint/latest", {
+      .then((token) => {
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        return fetch(`${API_URL}/api/v1/footprint/latest`, {
           headers: { Authorization: `Bearer ${token}` },
-        })
-      )
+        });
+      })
       .then(async (res) => {
         if (res.ok) {
           const data = await res.json();
