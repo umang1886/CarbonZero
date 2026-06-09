@@ -82,6 +82,10 @@ function SliderInput({ label, value, min = 0, max, unit, onChange, color }: any)
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         className="w-full h-2 rounded-lg appearance-none cursor-pointer focus:outline-none"
+        aria-label={label}
+        aria-valuemin={min}
+        aria-valuemax={max}
+        aria-valuenow={value}
         style={{
           background: `linear-gradient(to right, ${color} ${(value / max) * 100}%, rgba(255,255,255,0.1) ${(value / max) * 100}%)`,
         }}
@@ -115,14 +119,16 @@ function StepperInput({ label, value, min = 0, max = 999, unit, onChange, color 
           onClick={() => onChange(Math.max(min, value - 1))}
           className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
           style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
+          aria-label={`Decrease ${label}`}
         >
           <Minus className="w-4 h-4 text-white" />
         </button>
-        <span className="font-display text-xl font-bold text-white w-10 text-center">{value}</span>
+        <span className="font-display text-xl font-bold text-white w-10 text-center" aria-live="polite">{value}</span>
         <button
           onClick={() => onChange(Math.min(max, value + 1))}
           className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
           style={{ background: `${color}20`, border: `1px solid ${color}50` }}
+          aria-label={`Increase ${label}`}
         >
           <Plus className="w-4 h-4 text-white" />
         </button>

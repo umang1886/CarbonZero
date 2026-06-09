@@ -189,7 +189,7 @@ export default function DashboardPage() {
                   </Pie>
                   <Tooltip
                     contentStyle={{ background: "#1C2128", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, color: "#F0F6FC", fontSize: 12 }}
-                    formatter={(v: number) => [`${v.toLocaleString()} kg CO₂e`, ""]}
+                    formatter={(v: any) => [`${v.toLocaleString()} kg CO₂e`, ""]}
                   />
                 </PieChart>
               </ResponsiveContainer>
