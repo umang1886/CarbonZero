@@ -32,7 +32,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative" style={{ background: "#0D1117" }}>
+    <div className="min-h-screen flex items-center justify-center p-4 relative bg-[#0D1117]">
       {/* Background decoration */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 pointer-events-none" style={{ background: "#52B788" }} />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 pointer-events-none" style={{ background: "#40916C" }} />
@@ -44,7 +44,7 @@ export default function LoginPage() {
             <Leaf className="w-6 h-6 text-white" />
           </div>
           <h1 className="font-display text-3xl font-black text-white">Welcome Back</h1>
-          <p className="text-sm mt-2" style={{ color: "rgba(240,246,252,0.6)" }}>Log in to access your dashboard</p>
+          <p className="text-sm mt-2 text-[#F0F6FC]/60">Log in to access your dashboard</p>
         </div>
 
         {error && (
@@ -86,7 +86,7 @@ export default function LoginPage() {
           </Button>
         </form>
 
-        <p className="text-center text-sm mt-6" style={{ color: "rgba(240,246,252,0.6)" }}>
+        <p className="text-center text-sm mt-6 text-[#F0F6FC]/60">
           Don&apos;t have an account?{" "}
           <Link href="/register" className="font-semibold text-white hover:underline decoration-[#52B788] underline-offset-4">
             Sign up

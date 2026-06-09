@@ -60,8 +60,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200"
-                style={{ color: "rgba(240,246,252,0.6)" }}
+                className="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-[#F0F6FC]/60"
                 onMouseEnter={e => { (e.target as HTMLElement).style.color = "#52B788"; (e.target as HTMLElement).style.background = "rgba(82,183,136,0.05)"; }}
                 onMouseLeave={e => { (e.target as HTMLElement).style.color = "rgba(240,246,252,0.6)"; (e.target as HTMLElement).style.background = "transparent"; }}
               >

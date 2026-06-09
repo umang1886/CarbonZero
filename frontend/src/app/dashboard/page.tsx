@@ -97,7 +97,7 @@ export default function DashboardPage() {
 
   if (authLoading || fetching) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4" style={{ background: "#0D1117" }}>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-[#0D1117]">
         <div className="w-12 h-12 rounded-2xl flex items-center justify-center animate-pulse"
           style={{ background: "linear-gradient(135deg, #2D6A4F, #52B788)" }}>
           <Leaf className="w-6 h-6 text-white" />
@@ -110,14 +110,14 @@ export default function DashboardPage() {
   if (!footprint) {
     return (
       <ProtectedRoute>
-        <div className="min-h-screen pt-20 pb-12 px-4 flex flex-col items-center justify-center gap-6 text-center" style={{ background: "#0D1117" }}>
+        <div className="min-h-screen pt-20 pb-12 px-4 flex flex-col items-center justify-center gap-6 text-center bg-[#0D1117]">
           <div className="w-20 h-20 rounded-3xl flex items-center justify-center shadow-lg"
             style={{ background: "linear-gradient(135deg, #2D6A4F, #52B788)" }}>
             <Leaf className="w-10 h-10 text-white" />
           </div>
           <div>
             <h1 className="font-display text-4xl font-black text-white mb-3">Welcome to CarbonZero</h1>
-            <p className="text-base max-w-md mx-auto" style={{ color: "rgba(240,246,252,0.6)" }}>
+            <p className="text-base max-w-md mx-auto text-[#F0F6FC]/60">
               You haven&apos;t calculated your carbon footprint yet. Find out your environmental impact in just a few minutes.
             </p>
           </div>
@@ -142,7 +142,7 @@ export default function DashboardPage() {
 
   return (
     <ProtectedRoute>
-    <div className="min-h-screen pt-20 pb-12 px-4" style={{ background: "#0D1117" }}>
+    <div className="min-h-screen pt-20 pb-12 px-4 bg-[#0D1117]">
       <div className="max-w-7xl mx-auto space-y-8">
 
         {/* Header */}
@@ -301,7 +301,7 @@ export default function DashboardPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             className="p-6 rounded-2xl" style={{ background: "#161B22", border: "1px solid rgba(255,255,255,0.06)" }}>
             <div className="flex items-center gap-2 mb-4">
-              <Zap className="w-4 h-4" style={{ color: "#52B788" }} />
+              <Zap className="w-4 h-4 text-[#52B788]" />
               <h2 className="font-display font-bold text-white">AI-Recommended Actions</h2>
             </div>
             <div className="space-y-3">
@@ -321,7 +321,7 @@ export default function DashboardPage() {
                 </div>
               ))}
             </div>
-            <Link href="/insights" className="mt-4 flex items-center gap-1 text-sm font-medium" style={{ color: "#52B788" }}>
+            <Link href="/insights" className="mt-4 flex items-center gap-1 text-sm font-medium text-[#52B788]">
               View all AI Insights <ChevronRight className="w-4 h-4" />
             </Link>
           </motion.div>

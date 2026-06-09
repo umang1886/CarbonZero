@@ -197,7 +197,7 @@ export default function ChatBot() {
                   >
                     {msg.role === "user"
                       ? <User className="w-3.5 h-3.5 text-white" />
-                      : <Leaf className="w-3.5 h-3.5" style={{ color: "#52B788" }} />
+                      : <Leaf className="w-3.5 h-3.5 text-[#52B788]" />
                     }
                   </div>
 
@@ -231,7 +231,7 @@ export default function ChatBot() {
                     className="w-7 h-7 rounded-full flex items-center justify-center shrink-0"
                     style={{ background: "rgba(82,183,136,0.15)", border: "1px solid rgba(82,183,136,0.3)" }}
                   >
-                    <Leaf className="w-3.5 h-3.5" style={{ color: "#52B788" }} />
+                    <Leaf className="w-3.5 h-3.5 text-[#52B788]" />
                   </div>
                   <div
                     className="rounded-2xl px-4 py-3 flex items-center gap-1.5"

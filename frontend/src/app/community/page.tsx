@@ -63,7 +63,7 @@ export default function CommunityPage() {
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen pt-24 pb-20 px-4 relative" style={{ background: "#0D1117" }}>
+      <div className="min-h-screen pt-24 pb-20 px-4 relative bg-[#0D1117]">
         {/* Glow Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-[500px] rounded-full blur-[150px] pointer-events-none opacity-20" style={{ background: "linear-gradient(to right, #52B788, #74C0FC)" }} />
 

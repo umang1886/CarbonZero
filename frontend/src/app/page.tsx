@@ -317,7 +317,7 @@ export default function LandingPage() {
             className="flex flex-wrap justify-center gap-6 pt-4">
             {["Firebase", "Gemini AI", "Cloud Run", "IPCC Validated"].map((badge) => (
               <span key={badge} className="flex items-center gap-1.5 text-sm font-medium tracking-wide" style={{ color: "rgba(240,246,252,0.4)" }}>
-                <CheckCircle2 className="w-4 h-4" style={{ color: "#52B788" }} />
+                <CheckCircle2 className="w-4 h-4 text-[#52B788]" />
                 {badge}
               </span>
             ))}
@@ -336,7 +336,7 @@ export default function LandingPage() {
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 {/* Total */}
                 <div className="text-center md:text-left md:w-1/3">
-                  <p className="text-sm font-medium mb-2 uppercase tracking-wider" style={{ color: "#52B788" }}>Estimated Footprint</p>
+                  <p className="text-sm font-medium mb-2 uppercase tracking-wider text-[#52B788]">Estimated Footprint</p>
                   <p className="font-display text-5xl font-black text-white drop-shadow-md">
                     {totalSample.toLocaleString()} <span className="text-xl font-normal" style={{ color: "rgba(240,246,252,0.5)" }}>kg CO₂e/yr</span>
                   </p>
@@ -398,7 +398,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((s, i) => (
               <FadeInSection key={i} delay={i * 0.1} className="text-center group">
-                <p className="font-display text-5xl font-black transition-transform group-hover:scale-110 group-hover:text-white" style={{ color: "#52B788" }}>
+                <p className="font-display text-5xl font-black transition-transform group-hover:scale-110 group-hover:text-white text-[#52B788]">
                   <Counter to={s.value} suffix={s.suffix} />
                 </p>
                 <p className="text-sm mt-3 font-medium uppercase tracking-widest" style={{ color: "rgba(240,246,252,0.4)" }}>{s.label}</p>
@@ -421,7 +421,7 @@ export default function LandingPage() {
                 See the Impact<br />
                 <span className="text-[#74C0FC]">Instantly.</span>
               </h2>
-              <p className="text-lg mb-8 leading-relaxed" style={{ color: "rgba(240,246,252,0.6)" }}>
+              <p className="text-lg mb-8 leading-relaxed text-[#F0F6FC]/60">
                 Wondering how much difference a single lifestyle change makes? Toggle the scenarios to see your projected emissions drop in real-time.
               </p>
               
@@ -528,7 +528,7 @@ export default function LandingPage() {
                   <f.icon className="w-7 h-7" style={{ color: f.color }} />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-white mb-3 tracking-tight">{f.title}</h3>
-                <p className="text-base leading-relaxed" style={{ color: "rgba(240,246,252,0.6)" }}>{f.desc}</p>
+                <p className="text-base leading-relaxed text-[#F0F6FC]/60">{f.desc}</p>
               </SpotlightCard>
             </FadeInSection>
           ))}
