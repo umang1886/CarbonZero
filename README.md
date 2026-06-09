@@ -3,11 +3,6 @@
 <!-- Animated Banner -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=CarbonZero&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=35&desc=AI-Powered%20Carbon%20Intelligence%20Platform&descSize=20&descAlignY=60" width="100%" />
 
-<!-- Animated Logo -->
-<br/>
-<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=700&size=26&pause=1000&color=52B788&center=true&vCenter=true&width=600&lines=Know+Your+Carbon+Story.;Track+It.+Reduce+It.;Powered+by+Google+Gemini+AI.;Built+for+a+Greener+Future.+🌱" alt="Typing SVG" />
-
-<br/>
 
 <!-- Live App Badge -->
 <a href="https://carbonzero-frontend-252463810730.asia-south1.run.app/" target="_blank">
